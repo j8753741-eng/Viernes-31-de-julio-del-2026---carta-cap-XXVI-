@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>✦ Donde Siempre Vuelve Mi Corazón ✦</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:radial-gradient(circle at top,#312217 0%,#1c140e 45%,#110c08 100%);
+font-family:'Cormorant Garamond',serif;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:45px;
+}
+
+.book-page{
+position:relative;
+width:min(900px,100%);
+padding:70px 70px 130px;
+background:linear-gradient(180deg,#fdfaf0,#f9f0e2,#f2e8d4);
+border:2px solid #c8ae7b;
+box-shadow:0 0 70px rgba(0,0,0,.55), inset 0 0 95px rgba(123,94,55,.10);
+overflow:hidden;
+}
+
+.book-page::before{
+content:"";
+position:absolute;
+top:18px;
+left:18px;
+right:18px;
+bottom:18px;
+border:1px solid rgba(152,116,67,.35);
+}
+
+.book-page::after{
+content:"❈";
+position:absolute;
+top:28px;
+right:34px;
+font-size:26px;
+color:#b99d69;
+opacity:.45;
+}
+
+.ornament{
+text-align:center;
+font-size:24px;
+letter-spacing:10px;
+color:#8b6642;
+margin-bottom:28px;
+}
+
+.book-title{
+text-align:center;
+font-size:18px;
+letter-spacing:4px;
+text-transform:uppercase;
+color:#68492a;
+margin-bottom:18px;
+}
+
+.chapter{
+text-align:center;
+font-size:34px;
+font-weight:600;
+letter-spacing:4px;
+color:#49321f;
+margin-bottom:12px;
+}
+
+.date{
+text-align:center;
+font-size:17px;
+letter-spacing:1px;
+color:#785b37;
+margin-bottom:52px;
+}
+
+.content{
+padding:45px;
+border:1px dashed rgba(152,116,67,.45);
+background:rgba(255,255,255,.14);
+text-align:center;
+line-height:2;
+font-size:22px;
+font-style:italic;
+color:#584026;
+}
+
+.content strong{
+font-size:24px;
+font-style:normal;
+}
+
+#countdown{
+margin-top:35px;
+font-size:42px;
+font-weight:bold;
+letter-spacing:5px;
+color:#702727;
+}
+
+.count-text{
+margin-top:18px;
+font-size:18px;
+font-style:normal;
+color:#6c5233;
+}
+
+.status{
+margin-top:45px;
+text-align:center;
+font-size:18px;
+line-height:1.9;
+font-style:italic;
+color:#65492b;
+}
+
+.seal{
+margin:55px auto 0;
+width:80px;
+height:80px;
+border-radius:50%;
+background:radial-gradient(circle,#a43f3f,#671616 72%);
+border:4px solid #d7b67b;
+box-shadow:0 10px 18px rgba(0,0,0,.28), inset 0 0 14px rgba(255,255,255,.14);
+}
+
+.page-number{
+position:absolute;
+bottom:28px;
+right:42px;
+font-size:17px;
+letter-spacing:2px;
+color:#765737;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="book-page">
+
+<div class="ornament">
+✧ ❦ ✧ ❦ ✧ ❦ ✧
+</div>
+
+<div class="book-title">
+✦ Donde Siempre Vuelve Mi Corazón ✦
+</div>
+
+<div class="chapter">
+Capítulo XXVI
+</div>
+
+<div class="date">
+Viernes 31 de julio de 2026 • Noche
+</div>
+
+<div class="content">
+
+<strong>
+La próxima página ya respira entre estas hojas antiguas. Solo espera que el último instante de la espera se transforme en el primer instante de un nuevo recuerdo.
+</strong>
+
+<br><br>
+
+El tiempo continúa avanzando con la misma paciencia con la que este libro ha aprendido a guardar cada historia. Cuando el reloj complete su recorrido, un nuevo capítulo ocupará el lugar que siempre le perteneció.
+
+<div id="countdown">
+00:00:00
+</div>
+
+<div class="count-text">
+El reloj sigue escribiendo, segundo a segundo, el camino hacia la siguiente página.
+</div>
+
+</div>
+
+<div class="status">
+✦ Ningún recuerdo destinado a permanecer para siempre necesita apresurarse; basta con esperar el instante perfecto para nacer. ✦
+</div>
+
+<div class="seal"></div>
+
+
+<div class="page-number">
+
+❦ &nbsp; XXVI &nbsp; ❦
+
+</div>
+
+</div>
+
+<script>
+
+const fechaObjetivo = new Date("2026-07-31T21:30:00");
+
+function actualizarContador(){
+
+    const ahora = new Date();
+
+    const diferencia = fechaObjetivo.getTime() - ahora.getTime();
+
+    if(diferencia <= 0){
+
+        document.getElementById("countdown").innerHTML = "✦ Ya disponible ✦";
+        return;
+
+    }
+
+    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+
+    const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+    const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+
+    const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+    let texto = "";
+
+    if(dias > 0){
+
+        texto += String(dias).padStart(2,"0") + "d ";
+
+    }
+
+    texto +=
+        String(horas).padStart(2,"0") + ":" +
+        String(minutos).padStart(2,"0") + ":" +
+        String(segundos).padStart(2,"0");
+
+    document.getElementById("countdown").textContent = texto;
+
+}
+
+actualizarContador();
+
+setInterval(actualizarContador,1000);
+
+</script>
+
+</body>
+
+</html>
